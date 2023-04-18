@@ -7,6 +7,7 @@ Realisé Par : Adil Erraad
  1. **Introduction:**
  
     1. *Objectifs de ce TP :*
+       The Objectif of this applied work is to try to create a single network structure in several different ways in order to raise the level of protection and make things simpler for control.
     
     2. *Outils logiciels :*
     
@@ -27,29 +28,29 @@ Realisé Par : Adil Erraad
  
  ![2023-04-18 14_10_38-Cisco Packet Tracer - C__Users_adilraad2001_Cisco Packet Tracer 8 2 0_saves_tp3](https://user-images.githubusercontent.com/99618982/232805592-3e4481ee-3675-4e4e-ae7d-0fa36d789253.png)
  
- 1.1. Advantage:
+ 1.1. __Advantage:
  
-    - Cost-effective:Using a single switch to link three machines can be less expensive than using numerous switches. This is especially effective in small-scale or low-budget networks.
+   - Cost-effective:Using a single switch to link three machines can be less expensive than using numerous switches. This is especially effective in small-scale or low-budget networks.
     
-    - Simple management:Managing a single switch is often easier than managing numerous switches. Because there is only one device to manage, tasks like as configuration, monitoring, and troubleshooting are simpler.
+   - Simple management:Managing a single switch is often easier than managing numerous switches. Because there is only one device to manage, tasks like as configuration, monitoring, and troubleshooting are simpler.
 
-    - Reduce network complexity:The entire network topology is simpler with only one switch, which can lead to easier troubleshooting and maintenance. It may also necessitate less network cabling, resulting in less clutter and easier cable management.
+   - Reduce network complexity:The entire network topology is simpler with only one switch, which can lead to easier troubleshooting and maintenance. It may also necessitate less network cabling, resulting in less clutter and easier cable management.
     
-    - easier surveillance:Because there are fewer ports and connections to monitor with a single switch, it may be easier to monitor network traffic and discover any security threats or anomalies.
+   - Easier surveillance:Because there are fewer ports and connections to monitor with a single switch, it may be easier to monitor network traffic and discover any security threats or anomalies.
     
- 1.2. disadvantage:
+ 1.2. _disadvantage:_
  
-    - Small-scale segmentation:It may be difficult to establish adequate network segmentation for security purposes in a network with only one switch. Segmentation aids in the isolation of different areas of the network in order to contain potential security breaches. An attack or breach in one computer may have a greater impact on the rest of the network if it is not properly segmented.
+   - Small-scale segmentation:It may be difficult to establish adequate network segmentation for security purposes in a network with only one switch. Segmentation aids in the isolation of different areas of the network in order to contain potential security breaches. An attack or breach in one computer may have a greater impact on the rest of the network if it is not properly segmented.
     
-    - One point to failure:If a single switch fails, the entire network may go down, impacting all machines connected to it. Redundancy and fault tolerance may be jeopardized, affecting total network availability and resilience.
+   - One point to failure:If a single switch fails, the entire network may go down, impacting all machines connected to it. Redundancy and fault tolerance may be jeopardized, affecting total network availability and resilience.
     
-    - Security features are limited:Some advanced security features, such as VLANs, access control lists (ACLs), and network segmentation, may necessitate more complex configurations that are difficult to achieve with a single switch. This may hinder the network's capacity to apply comprehensive security measures.
+   - Security features are limited:Some advanced security features, such as VLANs, access control lists (ACLs), and network segmentation, may necessitate more complex configurations that are difficult to achieve with a single switch. This may hinder the network's capacity to apply comprehensive security measures.
 
  2. *Topology 2*
  
  ![2023-04-18 14_20_15-Cisco Packet Tracer - C__Users_adilraad2001_Cisco Packet Tracer 8 2 0_saves_tp3](https://user-images.githubusercontent.com/99618982/232806735-975c5ad4-d79d-47de-a13a-da6e147caae9.png)
  
-  2.1. Advantage:
+  2.1. _Advantage:_
   
    - Segmentation:Multiple switches enable greater network segmentation, which can assist separate different areas of the network and reduce the impact of security breaches or attacks. This can aid in containing any security events and preventing them from propagating throughout the network.
    
@@ -59,7 +60,7 @@ Realisé Par : Adil Erraad
    
    - Monitoring and detection:Multiple switches can help detect and mitigate potential security risks or abnormalities by providing more visibility into network traffic and activity. On switches, monitoring tools and security protocols can be used to monitor traffic and identify any security breaches or malicious activity.
   
-  2.2. disadvantage:
+  2.2. _Disadvantage:_
   
   - Configuration difficulties:To enable effective communication between switches and machines, additional setup chores such as inter-switch links (ISLs) or trunking may be required when configuring and administering several switches. This can make network design and administration more difficult.
   
@@ -73,7 +74,21 @@ Realisé Par : Adil Erraad
  
  ![2023-04-18 14_21_09-Cisco Packet Tracer - C__Users_adilraad2001_Cisco Packet Tracer 8 2 0_saves_tp3](https://user-images.githubusercontent.com/99618982/232806900-a6e6aa2c-2bfb-463a-9859-34fd5b464c8e.png)
  
-  3.1. Advantage:
+  3.0. Configuration:
+  
+    To Configure the vlan in switch we need first to go into CLI and start as administrator
+    And Create Vlan by using the command with number of this vlan(we can change the name if we want by using name [vlan name] after accessing in the vlan):
+    
+    ![2023-04-18 15_42_31-Switch6(1)](https://user-images.githubusercontent.com/99618982/232830415-97886771-b4be-4937-a6cd-42b2f4c61f9a.png)
+    
+    and to make it work in a machine we need to go to the port where connected with the switch :
+    
+    ![2023-04-18 15_44_54-Switch6](https://user-images.githubusercontent.com/99618982/232831139-0cb479de-ec26-43d6-96ed-5b6d8353a6c7.png)
+    
+    by cahnge the switch port mode to access for machine and trunk for other switch 
+    and choose the vlan we want to working in it this port
+ 
+  3.1. _Advantage:_
    
    - Segmentation:VLANs can offer logical network segmentation, allowing different types of traffic to be isolated. As an attacker getting access to one VLAN may have limited or no view into other VLANs, this can help restrict the potential impact of security breaches or assaults.
    
@@ -83,7 +98,7 @@ Realisé Par : Adil Erraad
    
    - Monitoring and detection:VLANs can be used to improve security threat monitoring and detection. Having separate VLANs for different types of traffic makes it easier to monitor and analyze data inside each VLAN, which can help spot potential security issues, abnormalities, or malicious activity.
    
-  3.2. disadvantage:
+  3.2. _disadvantage:_
   
    - Misconfiguration risk:VLAN misconfigurations, such as erroneous VLAN assignments or misconfigured trunk lines, can lead to security flaws. For example, if a machine is allocated to the wrong VLAN by mistake, it may acquire illegal access to resources in other VLANs. To mitigate this risk, proper configuration management techniques should be used.
    
